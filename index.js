@@ -9,6 +9,18 @@ const colors = require("colors");
 const questions = [
   {
     type: "input",
+    name: "fileName",
+    message: "Please enter your file name:",
+    validate: function (input) {
+      if (!input.trim().includes(".svg") || input.trim() === "") {
+        return "Please enter a svg file type ex. picture.svg !";
+      }
+      return true;
+    },
+  },
+// Above, is a question to ask and make sure the input is a svg file type.
+  {
+    type: "input",
     name: "text",
     message: "Please enter up to three charcters",
     validate: function (input) {
@@ -61,7 +73,8 @@ function init() {
   inquirer.prompt(questions).then((data) => {
     let caseColor;
     let shape;
-    // Above we declare two variables that will be used for our switch statment.
+    let fileName = data.fileName
+    // Above we declare three variables, two of which we will  use for our switch statment.
     const upperDataText = data.text.replace(/[a-zA-Z]/g, (letter) =>
       letter.toUpperCase()
     );
@@ -107,12 +120,12 @@ function init() {
 
     //Above, our second switch statment checks for the input of shape we recieved.
     // Then the shape for a svg file is stored in the shape variable.
-
+    console.log(fileName)
     console.log(caseColor);
     console.log(shape);
     console.log(upperDataText);
 
-    return { caseColor, shape, upperDataText };
+    return { caseColor, shape, upperDataText, fileName };
     // Above, I return these values to use in the next .then.
   });
 }
