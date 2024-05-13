@@ -1,0 +1,10 @@
+
+    
+    <svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="170" cy="170" r="150" fill="red" />
+      <text x="170" y="170" text-anchor="middle" alignment-baseline="middle" font-family="Arial" font-size="95" fill="white">
+        FDT
+      </text>
+    </svg>
+    
+    

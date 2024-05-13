@@ -21,18 +21,18 @@ class Rectangle extends Shape {
 // This constructor inherits the properties of Shape.
 // The same is repeated for the folowing shapes.
 
-Rectangle.prototype.markUp = function () {
+Rectangle.prototype.markUP = function () {
+
 
   return `
   <svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <rect x="10" y="10" width="270" height="150" fill="${this.color}" />
-
     <text x="145" y="85" text-anchor="middle" alignment-baseline="middle" font-family="Arial" font-size="97"
         fill="white">
         ${this.text}
     </text>
 
-    </svg>
+  </svg>
     
     `;
 };
@@ -53,17 +53,16 @@ class Circle extends Shape {
 }
 
 Circle.prototype.markUP = function () {
+
+  
+
   return `
     
     <svg width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="170" cy="170" r="150" fill="${this.color}" />
-  
+      <circle cx="170" cy="170" r="150" fill="${this.color}" />
       <text x="170" y="170" text-anchor="middle" alignment-baseline="middle" font-family="Arial" font-size="95" fill="white">
-          ${this.text}
+        ${this.text}
       </text>
-  
-  
-  
     </svg>
     
     `;
@@ -84,10 +83,10 @@ Triangle.prototype.markUP = function () {
 
 
   return `
-    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="150,30 270,270 30,270" fill="${this.color}"/>
-  <text x="150" y="200" text-anchor="middle" font-family="Arial" font-size="45" fill="white">${this.text}</text>
-    </svg>
+  <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="150,30 270,270 30,270" fill="${this.color}"/>
+    <text x="150" y="200" text-anchor="middle" font-family="Arial" font-size="45" fill="white">${this.text}</text>
+  </svg>
    
     
     `;
@@ -97,9 +96,7 @@ Triangle.prototype.render= function () {
     return `<polygon points="150,30 270,270 30,270" fill="${this.color}"/>`
 };
 
-const newShape = new Triangle("red", "TDV");
 
-newShape.markUP();
 
 module.exports = { Rectangle, Circle, Triangle };
 
